@@ -14,7 +14,7 @@ response = json.loads(response.content)
 
 productlist = response['products']
 for x in range(len(productlist)):
-    time.sleep(35)
+    time.sleep(5)
     company = productlist[x].get('id').get('company')
     product = productlist[x].get('id').get('product')
     url = 'https://api.update.ledvance.com/v1/zigbee/firmwares/download/%s/%s/latest' % (company, product)
