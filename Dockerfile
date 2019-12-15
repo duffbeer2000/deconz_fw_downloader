@@ -4,6 +4,6 @@ RUN mkdir /otau
 
 WORKDIR /usr/src/app
 
-COPY ikea.py ./
+COPY *.py ./
 
 CMD [ "python", "./fw_downloads.py" ]
