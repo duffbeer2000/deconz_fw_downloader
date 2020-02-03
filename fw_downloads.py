@@ -13,7 +13,8 @@ except ImportError:
 	from urllib import urlretrieve
 
 now = datetime.datetime.now()
-print ('%s - Downloadscript started' % now.strftime("%Y-%m-%d %H:%M"))
+
+print ('%s - Downloadscript started' % f"{datetime.datetime.now():%Y-%m-%d %H:%M:%S}")
 
 f = urlopen("http://fw.ota.homesmart.ikea.net/feed/version_info.json")
 data = f.read()
@@ -36,9 +37,9 @@ for i in arr:
 
 		if not os.path.isfile(path):
 			urlretrieve(url, path)
-			print(path)
+			print('%s - %s downloaded' % (now.strftime("%Y-%m-%d %H:%M:%S"), path))
 		else:
-		    print('%s - %s already exists' % (now.strftime("%Y-%m-%d %H:%M"), fname))
+		    print('%s - %s already exists' % (now.strftime("%Y-%m-%d %H:%M:%S"), fname))
 
 
 """
@@ -68,8 +69,8 @@ for x in range(len(productlist)):
         file = open(path, "wb")
         file.write(firmwarecontent)
         file.close()
-        print('%s - %s downloaded' % (now.strftime("%Y-%m-%d %H:%M"), path))
+        print('%s - %s downloaded' % (now.strftime("%Y-%m-%d %H:%M:%S"), path))
     else:
-        print('%s - %s already exists' % (now.strftime("%Y-%m-%d %H:%M"), fname))
+        print('%s - %s already exists' % (now.strftime("%Y-%m-%d %H:%M:%S"), fname))
 
-print ('%s - Downloadscript stopped' % now.strftime("%Y-%m-%d %H:%M"))
+print ('%s - Downloadscript stopped' % now.strftime("%Y-%m-%d %H:%M:%S"))
