@@ -12,7 +12,6 @@ except ImportError:
 	from urllib2 import urlopen
 	from urllib import urlretrieve
 
-now = datetime.datetime.now()
 
 print ('%s - Downloadscript started' % f"{datetime.datetime.now():%Y-%m-%d %H:%M:%S}")
 
@@ -37,9 +36,9 @@ for i in arr:
 
 		if not os.path.isfile(path):
 			urlretrieve(url, path)
-			print('%s - %s downloaded' % (now.strftime("%Y-%m-%d %H:%M:%S"), path))
+			print('%s - %s downloaded' % (f"{datetime.datetime.now():%Y-%m-%d %H:%M:%S}", path))
 		else:
-		    print('%s - %s already exists' % (now.strftime("%Y-%m-%d %H:%M:%S"), fname))
+		    print('%s - %s already exists' % (f"{datetime.datetime.now():%Y-%m-%d %H:%M:%S}", fname))
 
 
 """
@@ -69,8 +68,8 @@ for x in range(len(productlist)):
         file = open(path, "wb")
         file.write(firmwarecontent)
         file.close()
-        print('%s - %s downloaded' % (now.strftime("%Y-%m-%d %H:%M:%S"), path))
+        print('%s - %s downloaded' % (f"{datetime.datetime.now():%Y-%m-%d %H:%M:%S}", path))
     else:
-        print('%s - %s already exists' % (now.strftime("%Y-%m-%d %H:%M:%S"), fname))
+        print('%s - %s already exists' % (f"{datetime.datetime.now():%Y-%m-%d %H:%M:%S}", fname))
 
-print ('%s - Downloadscript stopped' % now.strftime("%Y-%m-%d %H:%M:%S"))
+print ('%s - Downloadscript stopped' % f"{datetime.datetime.now():%Y-%m-%d %H:%M:%S}")
