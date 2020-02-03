@@ -4,8 +4,7 @@ Snipped to download current IKEA ZLL OTA files into ~/otau
 compatible with python 3.
 """
 
-import os, json, requests, re, time
-from datetime import datetime
+import os, json, requests, re, time, datetime
 
 try:
 	from urllib.request import urlopen, urlretrieve
@@ -13,7 +12,8 @@ except ImportError:
 	from urllib2 import urlopen
 	from urllib import urlretrieve
 
-print(datetime.now(), ' - Downloadscript started')
+now = datetime.datetime.now()
+print "%d - Downloadscript started" % now.strftime("%Y-%m-%d %H:%M")
 
 f = urlopen("http://fw.ota.homesmart.ikea.net/feed/version_info.json")
 data = f.read()
@@ -72,4 +72,4 @@ for x in range(len(productlist)):
     else:
         print('%s already exists' % fname)
 
-print(datetime.now(), ' - Downloadscript ended')
+print "%d - Downloadscript stopped" % now.strftime("%Y-%m-%d %H:%M")
