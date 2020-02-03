@@ -11,6 +11,7 @@ except ImportError:
 	from urllib2 import urlopen
 	from urllib import urlretrieve
 
+print(datetime.now(), ' - Downloadscript started')
 
 f = urlopen("http://fw.ota.homesmart.ikea.net/feed/version_info.json")
 data = f.read()
@@ -68,3 +69,5 @@ for x in range(len(productlist)):
         print(path)
     else:
         print('%s already exists' % fname)
+
+print(datetime.now(), ' - Downloadscript ended')
