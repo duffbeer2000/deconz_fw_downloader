@@ -13,7 +13,7 @@ except ImportError:
 	from urllib import urlretrieve
 
 now = datetime.datetime.now()
-print "%d - Downloadscript started" % now.strftime("%Y-%m-%d %H:%M")
+print ('%d - Downloadscript started' % now.strftime("%Y-%m-%d %H:%M"))
 
 f = urlopen("http://fw.ota.homesmart.ikea.net/feed/version_info.json")
 data = f.read()
@@ -72,4 +72,4 @@ for x in range(len(productlist)):
     else:
         print('%s already exists' % fname)
 
-print "%d - Downloadscript stopped" % now.strftime("%Y-%m-%d %H:%M")
+print ('%d - Downloadscript stopped' % now.strftime("%Y-%m-%d %H:%M"))
