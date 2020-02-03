@@ -5,6 +5,8 @@ compatible with python 3.
 """
 
 import os, json, requests, re, time
+from datetime import datetime
+
 try:
 	from urllib.request import urlopen, urlretrieve
 except ImportError:
