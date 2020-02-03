@@ -13,7 +13,7 @@ except ImportError:
 	from urllib import urlretrieve
 
 now = datetime.datetime.now()
-print ('%d - Downloadscript started' % now.strftime("%Y-%m-%d %H:%M"))
+print ('%s - Downloadscript started' % now.strftime("%Y-%m-%d %H:%M"))
 
 f = urlopen("http://fw.ota.homesmart.ikea.net/feed/version_info.json")
 data = f.read()
@@ -38,7 +38,7 @@ for i in arr:
 			urlretrieve(url, path)
 			print(path)
 		else:
-		    print('%s already exists' % fname)
+		    print('%s - %s already exists' % (now.strftime("%Y-%m-%d %H:%M"), fname))
 
 
 """
@@ -68,8 +68,8 @@ for x in range(len(productlist)):
         file = open(path, "wb")
         file.write(firmwarecontent)
         file.close()
-        print(path)
+        print('%s - %s downloaded' % (now.strftime("%Y-%m-%d %H:%M"), path))
     else:
-        print('%s already exists' % fname)
+        print('%s - %s already exists' % (now.strftime("%Y-%m-%d %H:%M"), fname))
 
-print ('%d - Downloadscript stopped' % now.strftime("%Y-%m-%d %H:%M"))
+print ('%s - Downloadscript stopped' % now.strftime("%Y-%m-%d %H:%M"))
